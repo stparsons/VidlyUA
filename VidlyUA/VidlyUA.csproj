@@ -237,6 +237,10 @@
     <Compile Include="Migrations\201807261535111_Add-Genre.Designer.cs">
       <DependentUpon>201807261535111_Add-Genre.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807261810146_Update-Movies-Properties-Genre-Other.cs" />
+    <Compile Include="Migrations\201807261810146_Update-Movies-Properties-Genre-Other.Designer.cs">
+      <DependentUpon>201807261810146_Update-Movies-Properties-Genre-Other.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -400,6 +404,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807261535111_Add-Genre.resx">
       <DependentUpon>201807261535111_Add-Genre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261810146_Update-Movies-Properties-Genre-Other.resx">
+      <DependentUpon>201807261810146_Update-Movies-Properties-Genre-Other.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
