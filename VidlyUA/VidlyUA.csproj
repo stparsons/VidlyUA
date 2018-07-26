@@ -241,6 +241,14 @@
     <Compile Include="Migrations\201807261810146_Update-Movies-Properties-Genre-Other.Designer.cs">
       <DependentUpon>201807261810146_Update-Movies-Properties-Genre-Other.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807261821570_Populate-Genre-Data.cs" />
+    <Compile Include="Migrations\201807261821570_Populate-Genre-Data.Designer.cs">
+      <DependentUpon>201807261821570_Populate-Genre-Data.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807261839518_Update-Movie-Column-Requirements.cs" />
+    <Compile Include="Migrations\201807261839518_Update-Movie-Column-Requirements.Designer.cs">
+      <DependentUpon>201807261839518_Update-Movie-Column-Requirements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -407,6 +415,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807261810146_Update-Movies-Properties-Genre-Other.resx">
       <DependentUpon>201807261810146_Update-Movies-Properties-Genre-Other.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261821570_Populate-Genre-Data.resx">
+      <DependentUpon>201807261821570_Populate-Genre-Data.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261839518_Update-Movie-Column-Requirements.resx">
+      <DependentUpon>201807261839518_Update-Movie-Column-Requirements.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
