@@ -229,9 +229,18 @@
     <Compile Include="Migrations\201807252222483_AddCustomerBirthDateTimeNullable.Designer.cs">
       <DependentUpon>201807252222483_AddCustomerBirthDateTimeNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807261521431_Add-Movie-DBContext.cs" />
+    <Compile Include="Migrations\201807261521431_Add-Movie-DBContext.Designer.cs">
+      <DependentUpon>201807261521431_Add-Movie-DBContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807261535111_Add-Genre.cs" />
+    <Compile Include="Migrations\201807261535111_Add-Genre.Designer.cs">
+      <DependentUpon>201807261535111_Add-Genre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MebershipType.cs" />
@@ -385,6 +394,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807252222483_AddCustomerBirthDateTimeNullable.resx">
       <DependentUpon>201807252222483_AddCustomerBirthDateTimeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261521431_Add-Movie-DBContext.resx">
+      <DependentUpon>201807261521431_Add-Movie-DBContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807261535111_Add-Genre.resx">
+      <DependentUpon>201807261535111_Add-Genre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
