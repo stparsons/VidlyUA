@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
+using System.Security.AccessControl;
 using System.Web;
 
 namespace VidlyUA.Models
@@ -15,5 +18,6 @@ namespace VidlyUA.Models
         public bool IsSubscribedToNew { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
+        public DateTime? BirthDateTime { get; set; }
     }
 }
