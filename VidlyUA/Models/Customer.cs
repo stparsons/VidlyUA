@@ -18,6 +18,8 @@ namespace VidlyUA.Models
         public bool IsSubscribedToNew { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
+
+        [Display(Name = "Date of Birth")]
         public DateTime? BirthDateTime { get; set; }
     }
 }
