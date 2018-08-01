@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -85,7 +86,27 @@ namespace VidlyUA.Controllers
                 movieinDb.ReleasedDate = movie.ReleasedDate;
             }
 
-            _context.SaveChanges();
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch ( DbEntityValidationException e )
+            {
+                //
+                // This catch is to figure out what a true exception is during a validation error
+                // Used this to find that Genre was not being set correctly for Entity Framework
+                // To see :
+                //  1). Hit breakpoint
+                //  2). Inspect e
+                //  3). Click EntityValiationErrors [0]
+                //  4). Epand ValidationErrors[0]
+                //  5). ErrorMessage : "The Genre field is required"
+                //
+                // Fixed by moving [Required] attribute from Movie.Genre to Movie.GenreID
+                //
+                Console.WriteLine(e);
+                throw;
+            }
 
             return RedirectToAction( "Index", "Movies" );
         }

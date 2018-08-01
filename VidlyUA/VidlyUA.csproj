@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201807261839518_Update-Movie-Column-Requirements.Designer.cs">
       <DependentUpon>201807261839518_Update-Movie-Column-Requirements.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808011408048_Move Required Attribute from Movie.Genre to Movie.GenreId.cs" />
+    <Compile Include="Migrations\201808011408048_Move Required Attribute from Movie.Genre to Movie.GenreId.Designer.cs">
+      <DependentUpon>201808011408048_Move Required Attribute from Movie.Genre to Movie.GenreId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -425,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807261839518_Update-Movie-Column-Requirements.resx">
       <DependentUpon>201807261839518_Update-Movie-Column-Requirements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808011408048_Move Required Attribute from Movie.Genre to Movie.GenreId.resx">
+      <DependentUpon>201808011408048_Move Required Attribute from Movie.Genre to Movie.GenreId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
