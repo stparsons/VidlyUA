@@ -13,7 +13,7 @@ namespace VidlyUA.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter a valid Name")]
         [StringLength(255)]
         public string Name { get; set; }
 
@@ -25,6 +25,7 @@ namespace VidlyUA.Models
         public byte MembershipTypeId { get; set; }
 
         [Display(Name = "Date of Birth")]
+        [Min18YearsIfAMember]
         public DateTime? BirthDateTime { get; set; }
     }
 }
