@@ -32,7 +32,7 @@ namespace VidlyUA.Controllers.Api
         {
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customer == null)
-                return NotFound();
+                return BadRequest();
 
             return Ok(Mapper.Map<Customer, CustomerDto>(customer));
         }
@@ -56,12 +56,12 @@ namespace VidlyUA.Controllers.Api
         [HttpPut]
         public IHttpActionResult UpdateCustomers(int id, CustomerDto customerDto)
         {
-            if(!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+            if (!ModelState.IsValid)
+                return BadRequest();
 
             var customerInDb = _context.Customers.FirstOrDefault(c => c.Id == id);
-            if(customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customerInDb == null)
+                return NotFound();
 
             Mapper.Map(customerDto, customerInDb);
 
@@ -71,15 +71,16 @@ namespace VidlyUA.Controllers.Api
 
         // DELETE api/customers/1
         [HttpDelete]
-        public void DeleteCustomer(int id)
+        public IHttpActionResult DeleteCustomer(int id)
         {
             var customerInDb = _context.Customers.FirstOrDefault(c => c.Id == id);
-            if(customerInDb == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customerInDb == null)
+                return NotFound();
 
             _context.Customers.Remove(customerInDb);
             _context.SaveChanges();
 
+            return Ok();
         }
 
     }

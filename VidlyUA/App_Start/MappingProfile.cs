@@ -13,7 +13,19 @@ namespace VidlyUA.App_Start
         public MappingProfile()
         {
             Mapper.CreateMap<Customer, CustomerDto>();
-            Mapper.CreateMap<CustomerDto, Customer>();
+            Mapper.CreateMap<Movie, MovieDto>();
+
+            //
+            // *IMPORTANT* //
+            //  When going from a dto (Data Transfer Object) to a Model object
+            //  opt.Ignore ensures that id is not set during a Mapping.
+            //  ID should aways be uniqe so it should not be mapped.
+            //
+            Mapper.CreateMap<CustomerDto, Customer>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
+
+            Mapper.CreateMap<MovieDto, Movie>()
+                .ForMember(c => c.Id, opt => opt.Ignore());
         }
     }
 }
