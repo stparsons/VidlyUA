@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Http;
 using AutoMapper;
@@ -10,7 +11,7 @@ namespace VidlyUA.Controllers.Api
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;
-
+            
         public MoviesController()
         {
             _context = new ApplicationDbContext();
@@ -19,7 +20,9 @@ namespace VidlyUA.Controllers.Api
         [HttpGet]
         public IHttpActionResult GetMovies()
         {
-            var movieDtos = _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            var movieDtos = _context.Movies
+                .Include(c => c.Genre)
+                .ToList().Select(Mapper.Map<Movie, MovieDto>);
             return Ok( movieDtos );
         }
 
